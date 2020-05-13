@@ -1,2 +1,1 @@
-# webmobileudo_dfy
-Udo Web Mobile App
+Udo Web Mobile App Solution and Portal for ibeads

@@ -1,0 +1,84 @@
+{
+    "id": "webmobileudo",
+    "name": "Udo Web Mobile App",
+    "packaging_format": 1,
+    "description": {
+        "en": "Udo Web Mobile app with SFTP access"
+    },
+    "version": "1.0~ynh3",
+    "url": "https://github.com/deifyinfocommsolutions/webmobileudo_dfy",
+    "license": "GPL-3.0-only",
+    "maintainer": {
+        "name": "Deify Infocomm Solutions",
+        "email": "support@deifysolutions.com"
+    },
+    "requirements": {
+        "yunohost": ">= 3.6.0"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "php7.0-fpm",
+        "mysql"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain for your Webapp",
+                    "fr": "Choisissez un domaine pour votre Webapp"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for your Webapp",
+                    "fr": "Choisissez un chemin pour votre Webapp"
+                },
+                "example": "/site",
+                "default": "/site"
+            },
+            {
+                "name": "with_sftp",
+                "type": "boolean",
+                "ask": {
+                    "en": "Do you need a SFTP access?",
+                    "fr": "Avez-vous besoin d'un accès SFTP ?"
+                },
+                "default": true
+            },
+            {
+                "name": "password",
+                "type": "password",
+                "optional": true,
+                "ask": {
+                    "en": "Set the password for the SFTP access. ≥ 5 character",
+                    "fr": "Définissez le mot de passe pour l'accès SFTP. ≥ cinq charactères"
+                },
+                "example": "myreallystrengthpassword"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Is it a public website?",
+                    "fr": "Est-ce un site public ?"
+                },
+                "default": true
+            },
+            {
+                "name": "with_mysql",
+                "type": "boolean",
+                "ask": {
+                    "en": "Do you need a MySQL database?",
+                    "fr": "Avez-vous besoin d'une base de données MySQL ?"
+                },
+                "default": false
+            }
+        ]
+    }
+}
